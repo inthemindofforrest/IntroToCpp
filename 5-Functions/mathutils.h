@@ -20,7 +20,7 @@ int Clamp(int Min, int Max, int Number);
 float Distance(int x1, int y1, int x2, int y2);
 float TimeOfArrival(int First, int Second, int Third, int Fourth, int Fifth);
 double linearInterpolation(int First, int Second, double Third);
-
+void HighLowGame();
 
 
 
