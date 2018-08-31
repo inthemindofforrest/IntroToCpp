@@ -162,7 +162,6 @@ void InsertionSort(int arr[], int Size)
 	for (int i = 0; i < Size; i++)
 	{
 		tempHolder = arr[i];
-		PrintArray(arr, Size);
 		for (int j = (i - 1); j > 0; j--) 
 		{
 			
