@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{E35EA38A-706A-4BAA-A9B5-40EB7297B61C}</ProjectGuid>
-    <RootNamespace>My8DynamicMemory</RootNamespace>
+    <ProjectGuid>{7DC137B9-675E-4978-9D88-CD4416A4213D}</ProjectGuid>
+    <RootNamespace>My9Classes</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -116,6 +116,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PiggyBank.cpp" />
+    <ClCompile Include="ServerBrowserService.cpp" />
+    <ClCompile Include="Televisions.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PiggyBank.h" />
+    <ClInclude Include="ServerBrowserService.h" />
+    <ClInclude Include="Televisions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
