@@ -20,19 +20,21 @@ bool ServerBrowserService::registerServer(ServerInfo newServer)
 int ServerBrowserService::getServers(ServerInfo * dstArray, size_t dstSize, int MaxResults, 
 	int PingLimit, int RegionSpecifier, bool AllowEmpty, bool AllowFull)
 {
-	int i = 0;
-	for (; (i < dstSize && i < MaxResults); i++)
+	int Total = 0;
+	
+	for (int i = 0; (i < MaxResults); i++)
 	{
-		if (servers[i].ping < PingLimit && servers[i].regionID == RegionSpecifier)
+		if (servers[i].ping <= PingLimit && servers[i].maxPlayers != 0)
 		{
-			if(AllowEmpty && servers[i].currentPlayerCount < servers[i].maxPlayers)
+			if(AllowEmpty && servers[i].currentPlayerCount < servers[i].maxPlayers && servers[i].maxPlayers != 0)
 				dstArray[i] = servers[i];
-			if(AllowFull && servers[i].currentPlayerCount >= servers[i].maxPlayers)
+			else if(AllowFull && servers[i].currentPlayerCount >= servers[i].maxPlayers && servers[i].maxPlayers != 0)
 				dstArray[i] = servers[i];
+			Total++;
 		}
 			
 	}
-	return i;
+	return Total;
 }
 void ServerBrowserService::printServers()
 {

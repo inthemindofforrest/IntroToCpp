@@ -6,9 +6,9 @@
 using namespace std;
 
 
-void printLocalServers(ServerInfo * StartArray)
+void printLocalServers(ServerInfo * StartArray, int size)
 {
-	for (int i = 0; i < 50; i++)
+	for (int i = 0; i < size; i++)
 	{
 		cout << "Server: " << i + 1 << endl;
 		cout << "Players: " << StartArray[i].currentPlayerCount << "/" << StartArray[i].maxPlayers << endl;
@@ -31,8 +31,8 @@ int main()
 	ServerBrowserService MainServer;
 
 	ServerInfo Server1 = { 0,3,100,42 };
-	ServerInfo Server2 = { 0,45,100,52 };
-	ServerInfo Server3 = { 1,42,100,34 };
+	ServerInfo Server2 = { 0,100,100,52 };
+	ServerInfo Server3 = { 1,100,100,34 };
 	ServerInfo Server4 = { 1,13,100,72 };
 	ServerInfo Server5 = { 2,0,100,53 };
 
@@ -116,8 +116,8 @@ int main()
 		MainServer.registerServer(Server5);
 
 		//MainServer.printServers();
-		MainServer.getServers(LocalServers, 50, 50, 50, 0, true, true);
-		printLocalServers(LocalServers);
+		int temp = MainServer.getServers(LocalServers, 50, 50, 50, 0, true, true);
+		printLocalServers(LocalServers, temp);
 		system("PAUSE");
 	}
 
