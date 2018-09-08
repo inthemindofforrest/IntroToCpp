@@ -14,3 +14,4 @@ bool PalindromeTest(char * String);
 int StringLength(char * String);
 void ReverseString(char * String);
 void StringTrimming(char * String);
+void ShiftCipher(char * Password, int ShiftAmount, bool Decode);

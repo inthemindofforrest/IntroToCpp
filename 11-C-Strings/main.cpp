@@ -2,7 +2,7 @@
 
 int main()
 {
-	char String[] = "Maco ro ni";
+	char String[] = "The Cat Jumped OvEr the Moon";
 	bool Check = false;
 	//Greeting();
 	//FavoriteColor();
@@ -19,7 +19,9 @@ int main()
 	//cout << StringLength(String) << endl;
 	//ReverseString(String);
 	cout << String << endl;
-	StringTrimming(String);
+	ShiftCipher(String, 2, true);
+	cout << String << endl;
+	ShiftCipher(String, 2, false);
 	cout << String << endl;
 
 	system("PAUSE");

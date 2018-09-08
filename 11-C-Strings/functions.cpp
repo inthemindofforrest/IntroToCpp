@@ -176,13 +176,32 @@ void ShiftCipher(char * Password, int ShiftAmount, bool Decode)
 		{
 			for (int j = 0; j < ShiftAmount; j++)
 			{
-				Password[i] ++;
-				if (Password[i] > 90 && Password[i] < 97)
-					Password[i] = 97;
-				else if (Password[i] > 122)
-					Password[i] = 65;
+				if (Password[i] != 32)
+				{
+					Password[i] ++;
+					if (Password[i] > 90 && Password[i] < 97)
+						Password[i] = 97;
+					else if (Password[i] > 122)
+						Password[i] = 65;
+				}
 			}
 			
+		}
+		if (!Decode)
+		{
+			for (int j = 0; j < ShiftAmount; j++)
+			{
+				
+				if (Password[i] != 32)
+				{
+					Password[i] --;
+					if (Password[i] < 65)
+						Password[i] = 97;
+					else if (Password[i] < 97 && Password[i] > 90)
+						Password[i] = 65;
+				}
+			}
+
 		}
 	}
 }
