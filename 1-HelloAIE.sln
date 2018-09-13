@@ -31,6 +31,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "12-STLStrings", "12-STLStri
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReviewII", "ReviewII\ReviewII.vcxproj", "{844B698D-6E6B-473E-B1B1-146775429F6D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Debugging", "Debugging\Debugging.vcxproj", "{EA03B877-B947-4C80-97CC-F778095CDA30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -151,6 +153,14 @@ Global
 		{844B698D-6E6B-473E-B1B1-146775429F6D}.Release|x64.Build.0 = Release|x64
 		{844B698D-6E6B-473E-B1B1-146775429F6D}.Release|x86.ActiveCfg = Release|Win32
 		{844B698D-6E6B-473E-B1B1-146775429F6D}.Release|x86.Build.0 = Release|Win32
+		{EA03B877-B947-4C80-97CC-F778095CDA30}.Debug|x64.ActiveCfg = Debug|x64
+		{EA03B877-B947-4C80-97CC-F778095CDA30}.Debug|x64.Build.0 = Debug|x64
+		{EA03B877-B947-4C80-97CC-F778095CDA30}.Debug|x86.ActiveCfg = Debug|Win32
+		{EA03B877-B947-4C80-97CC-F778095CDA30}.Debug|x86.Build.0 = Debug|Win32
+		{EA03B877-B947-4C80-97CC-F778095CDA30}.Release|x64.ActiveCfg = Release|x64
+		{EA03B877-B947-4C80-97CC-F778095CDA30}.Release|x64.Build.0 = Release|x64
+		{EA03B877-B947-4C80-97CC-F778095CDA30}.Release|x86.ActiveCfg = Release|Win32
+		{EA03B877-B947-4C80-97CC-F778095CDA30}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
