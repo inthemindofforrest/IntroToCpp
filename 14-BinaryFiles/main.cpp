@@ -4,9 +4,11 @@
 int main()
 {
 	//AppendHelloWorld("Test.bin");
-	saveData  Data[1] = { {" ", 0,0,0,0} };
+	//saveData  Data= {"Player1", 4,24,432,4324};
 	//SaveGame(Data);
-	LoadGame(Data, sizeof(Data) / sizeof(saveData));
+	//LoadGame(Data, sizeof(Data) / sizeof(saveData));
+	MonsterCreatureQuest();
+
 
 	return 0;
 }

@@ -17,30 +17,23 @@ struct saveData
 	double timePlayed;  // given in seconds
 };
 
-struct record
+struct Monster
 {
-	int studentId;              // corresponding student ID
-	int assignmentId;           // corresponding assignment ID
-	int pointsAwarded;          // points given to student for assignment
-};
-
-struct assignment
-{
-	std::string assignmentName; // name of assignment
-	int id;                     // id no. for assignment
-	int maxPoints;              // maximum possible points for assignment
-};
-
-class gradebook
-{
-public:
-	size_t assignmentCount;
-	size_t recordCount;
-
-	assignment * assignments;
-	record * records;
+	string monsterName;
+	string MonsterID;
+	string Description;
 };
 
 void AppendHelloWorld(string Path);
 void SaveGame(saveData Data);
 void LoadGame(saveData * Data, size_t size);
+
+
+void MonsterCreatureQuest();
+void AddMonster(string ID, string Name, string Description);
+void RemoveMonster();
+void ViewMonster();
+void DisplayMonsters();
+void SaveMonsterToFile(Monster temp);
+int GetMonster(string tempID);
+int GetMonsterNumber(string tempID);
