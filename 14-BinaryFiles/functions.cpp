@@ -164,29 +164,6 @@ void AddMonster(string ID, string Name, string Description)
 	temp.monsterName = Name;
 
 	SaveMonsterToFile(temp);
-
-	////Hold all the values for the new monster, Also so allocated space can be free
-	//Monster * newMonster = new Monster[*Size]();
-	//newMonster = monster;
-
-	////Size increases to allow new struct at the end
-	////*(Size++);
-
-	////monster now is one bigger than it was before
-	//monster = new Monster[*Size + 1]();
-
-	////Set monster back to new monster values
-	//monster = newMonster;
-
-	////Set last spot in monster to the new struct value
-	//monster[*Size].monsterName = temp.MonsterID;
-	//monster[*Size].MonsterID = temp.MonsterID;
-
-	////free newMonster (Old mosters allocated space)
-	//delete[] newMonster;
-
-
-
 }
 void RemoveMonster()
 {
@@ -260,6 +237,7 @@ void ViewMonster()
 		{
 			getline(file, Line);
 			cout << "ID: " << Line << endl;
+			
 
 			getline(file, Line);
 			cout << "Name: " << Line << endl;
@@ -267,6 +245,8 @@ void ViewMonster()
 			getline(file, Line);
 			cout << "Description: " << Line << endl;
 			system("PAUSE");
+
+			file.close();
 		}
 		else
 		{
@@ -283,6 +263,68 @@ void ViewMonster()
 }
 void DisplayMonsters()
 {
+	fstream file;
+	fstream SecondFile;
+	string Input;
+	string ID;
+	string Line;
+
+
+	file.open("Monsters.bin", ios::in | ios::binary);
+	if (file.is_open())
+	{
+		while (getline(file, Line))
+		{
+
+			cout << endl;
+
+
+			if (Line.length() != 0)
+			{
+				Input.clear();
+				for (int i = 0; i < Line.length(); i++)
+				{
+					if (Line[i] != ',')
+						Input += Line[i];
+					else
+						break;
+				}
+				ID = Input;
+
+				Input.append(".bin");
+
+				if (ifstream(Input) && GetMonster(ID))
+				{
+					SecondFile.open(Input, ios::in | ios::binary);
+					if (SecondFile.is_open())
+					{
+						getline(SecondFile, Line);
+						cout << "ID: " << Line << endl;
+
+						getline(SecondFile, Line);
+						cout << "Name: " << Line << endl;
+
+						getline(SecondFile, Line);
+						cout << "Description: " << Line << endl;
+
+						SecondFile.close();
+					}
+					else
+					{
+						cout << "The Second file did not open" << endl;
+						system("PAUSE");
+					}
+				}
+			}
+			else
+			{
+				cout << "File Line length is 0" << endl;
+				system("PAUSE");
+			}
+		}
+		file.close();
+		system("PAUSE");
+	}
 
 }
 
@@ -360,12 +402,6 @@ int GetMonster(string tempID)
 		}
 			
 		UltimateSave.close();
-	}
-	else
-	{
-		cout << "File could not open" << endl;
-		system("PAUSE");
-		return NULL;
 	}
 	return 0;
 }
